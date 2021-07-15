@@ -4,7 +4,7 @@ def listar_color(lista):
         if lista[i] not in output:
             output.append(lista[i])
     return output
- 
+
 
 def color_requerido(ID, Lista_Col, color):
     output = []
@@ -15,16 +15,25 @@ def color_requerido(ID, Lista_Col, color):
         break
     return output
 
-# REVISASR ESTA FUNCIÓN
-
 def disponible_compra(ID_dis, ID_Nodis):
-    output = []
+    lista = []
     for i in ID_dis:
-        print(i)
-        for j in ID_Nodis:
-           if i != ID_Nodis
+        if i not in ID_Nodis:
+            lista.append(i)
+    return lista
 
-    return output
+def disponible_venta(ID_Nodis, Require_ID):
+    counter1 = 0
+    counter2 = 0
+    for i in Require_ID:
+        if i not in ID_Nodis:
+            counter1 += 1
+    for j in ID_Nodis:
+        if j not in Require_ID:
+            counter2 += 1
+    if counter1 < counter2:
+        return counter1
+    else:
+        return counter2
 
-
-print(disponible_compra([3, 5, 7, 10, 15, 16], [4, 10, 5, 8]))
+print(disponible_venta([4, 2, 17, 1, 0, 15, 5, 13, 23, 8],[3, 10, 0, 23, 19, 17, 22, 18, 16, 8, 2, 12]))
