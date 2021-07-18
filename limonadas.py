@@ -8,9 +8,10 @@ def listar_color(lista):
 
 def color_requerido(ID, Lista_Col, color):
     output = []
-    for i in ID:
-        if Lista_Col[i] == color:
-            output.append(i)
+    for j in range(len(Lista_Col)):
+        for i in ID:
+            if Lista_Col[i] == color:
+                output.append(i)
         break
     return output
 
@@ -36,3 +37,5 @@ def disponible_venta(ID_Nodis, Require_ID):
         return counter1
     else:
         return counter2
+
+print(color_requerido([5, 15, 6, 7, 19, 11, 25, 22, 14, 18, 21],[2, 3, 1, 3, 2, 4, 2, 2, 2, 4, 3, 4, 4, 3, 4, 3, 3, 2, 3, 4, 4, 1, 4, 1, 3, 3, 2, 2],4))
